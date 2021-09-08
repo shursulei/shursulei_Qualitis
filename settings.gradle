@@ -15,6 +15,27 @@
  */
 
 rootProject.name = 'qualitis'
-include 'web/app', 'web/user', 'web/sys_config', 'web/project', 'web/task', 'web/analysis', 'web/scheduler', 'web/meta_data', 'web/common', 'web/staff',
-        'core/converter', 'core/divider', 'core/common',  'core/monitor', 'core/task', 'core/project',
-        'core/scheduler', 'core/analysis', 'util', 'core/user', 'core/sys_config', 'core/meta_data'
+include 'web_app', 'web_user', 'web_sys_config', 'web_project', 'web_task', 'web_analysis', 'web_scheduler', 'web_meta_data', 'web_common', 'web_staff',
+        'core_converter', 'core_divider', 'core_common',  'core_monitor', 'core_task', 'core_project',
+        'core_scheduler', 'core_analysis', 'util', 'core_user', 'core_sys_config', 'core_meta_data'
+project(':core_analysis').projectDir =file('core/analysis')
+project(':core_common').projectDir =file('core/common')
+project(':core_converter').projectDir =file('core/converter')
+project(':core_divider').projectDir =file('core/divider')
+project(':core_meta_data').projectDir =file('core/meta_data')
+project(':core_sys_config').projectDir =file('core/sys_config')
+project(':core_user').projectDir =file('core/user')
+project(':core_monitor').projectDir =file('core/monitor')
+project(':core_task').projectDir =file('core/task')
+project(':core_project').projectDir =file('core/project')
+project(':core_scheduler').projectDir =file('core/scheduler')
+project(':web_app').projectDir =file('web/app')
+project(':web_user').projectDir =file('web/user')
+project(':web_sys_config').projectDir =file('web/sys_config')
+project(':web_project').projectDir =file('web/project')
+project(':web_task').projectDir =file('web/task')
+project(':web_analysis').projectDir =file('web/analysis')
+project(':web_scheduler').projectDir =file('web/scheduler')
+project(':web_meta_data').projectDir =file('web/meta_data')
+project(':web_common').projectDir =file('web/common')
+project(':web_staff').projectDir =file('web/staff')

@@ -15,7 +15,7 @@
  */
 
 // web sub_project dependencies
-project(':web/analysis') {
+project(':web_analysis') {
   archivesBaseName = 'web_analysis'
 
   dependencies{
@@ -23,7 +23,7 @@ project(':web/analysis') {
   }
 }
 
-project(':web/app') {
+project(':web_app') {
   archivesBaseName = 'web_app'
 
   configurations {
@@ -70,16 +70,16 @@ project(':web/app') {
     compile libs.derby
     compile libs.zookeeper
     compile libs.log4jCore
-    compile project(':web/user')
-    compile project(':web/sys_config')
-    compile project(':web/meta_data')
-    compile project(':web/project')
-    compile project(':web/scheduler')
-    compile project(':web/staff')
+    compile project(':web_user')
+    compile project(':web_sys_config')
+    compile project(':web_meta_data')
+    compile project(':web_project')
+    compile project(':web_scheduler')
+    compile project(':web_staff')
   }
 }
 
-project(':web/meta_data') {
+project(':web_meta_data') {
   archivesBaseName = 'web_meta_data'
 
   dependencies {
@@ -87,13 +87,13 @@ project(':web/meta_data') {
     compile libs.springBootStarterJersey
     compile libs.commonsLang
 
-    compile project(":core/meta_data")
-    compile project(':web/common')
-    compile project(':web/project')
+    compile project(":core_meta_data")
+    compile project(':web_common')
+    compile project(':web_project')
   }
 }
 
-project(':web/project') {
+project(':web_project') {
   archivesBaseName = 'web_project'
 
   dependencies {
@@ -105,14 +105,14 @@ project(':web/project') {
     compile libs.jerseyMediaMultipart
     compile libs.easyExcel
 
-    compile project(':web/common')
-    compile project(':web/user')
-    compile project(':core/project')
-    compile project(':web/sys_config')
+    compile project(':web_common')
+    compile project(':web_user')
+    compile project(':core_project')
+    compile project(':web_sys_config')
   }
 }
 
-project(':web/scheduler') {
+project(':web_scheduler') {
   archivesBaseName = 'web_scheduler'
 
   dependencies{
@@ -120,16 +120,16 @@ project(':web/scheduler') {
     compile libs.springBootStarterJersey
     compile libs.commonsLang
 
-    compile project(':web/common')
-    compile project(':web/project')
-    compile project(':web/task')
-    compile project(':core/scheduler')
-    compile project(':core/monitor')
+    compile project(':web_common')
+    compile project(':web_project')
+    compile project(':web_task')
+    compile project(':core_scheduler')
+    compile project(':core_monitor')
     compile project(':util')
   }
 }
 
-project(':web/sys_config') {
+project(':web_sys_config') {
   archivesBaseName = 'web_sys_config'
 
   dependencies {
@@ -139,26 +139,26 @@ project(':web/sys_config') {
     compile libs.mysqlConnectorJava
     compile libs.commonsLang
 
-    compile project(':web/common')
-    compile project(':core/meta_data')
-    compile project(':core/sys_config')
+    compile project(':web_common')
+    compile project(':core_meta_data')
+    compile project(':core_sys_config')
   }
 }
 
-project(':web/task') {
+project(':web_task') {
   archivesBaseName = 'web_task'
 
   dependencies{
     compile libs.springBootStarter
     compile libs.springBootStarterJersey
 
-    compile project(":web/project")
-    compile project(':core/task')
-    compile project(':core/monitor')
+    compile project(":web_project")
+    compile project(':core_task')
+    compile project(':core_monitor')
   }
 }
 
-project(':web/user') {
+project(':web_user') {
   archivesBaseName = 'web_user'
 
   dependencies{
@@ -168,12 +168,12 @@ project(':web/user') {
     compile libs.mysqlConnectorJava
     compile libs.commonsLang
     compile project(':util')
-    compile project(':web/common')
-    compile project(':core/user')
+    compile project(':web_common')
+    compile project(':core_user')
   }
 }
 
-project(':web/staff') {
+project(':web_staff') {
   archivesBaseName = 'web_staff'
 
   dependencies {
@@ -181,21 +181,21 @@ project(':web/staff') {
     compile libs.springBootStarterJersey
     compile libs.commonsLang
 
-    compile project(":core/user")
-    compile project(':web/common')
+    compile project(":core_user")
+    compile project(':web_common')
   }
 }
 
-project(':web/common') {
+project(':web_common') {
   archivesBaseName = 'web_common'
 
   dependencies{
     compile libs.springBootStarterJersey
-    compile project(':core/common')
+    compile project(':core_common')
   }
 }
 
-project(':core/analysis') {
+project(':core_analysis') {
   archivesBaseName = 'core_analysis'
 
   dependencies{
@@ -204,15 +204,15 @@ project(':core/analysis') {
   }
 }
 
-project(':core/converter') {
+project(':core_converter') {
   archivesBaseName = 'core_converter'
 
   dependencies{
-    compile project(':core/divider')
+    compile project(':core_divider')
   }
 }
 
-project(':core/common') {
+project(':core_common') {
   archivesBaseName = 'core_common'
 
   dependencies{
@@ -238,18 +238,18 @@ project(':core/common') {
   }
 }
 
-project(':core/divider') {
+project(':core_divider') {
   archivesBaseName = 'core_divider'
 
   dependencies{
     compile libs.springBootStarterJersey
     compile libs.commonsLang3
-    compile project(':core/common')
-    compile project(':core/project')
+    compile project(':core_common')
+    compile project(':core_project')
   }
 }
 
-project(':core/meta_data') {
+project(':core_meta_data') {
   archivesBaseName = 'core_meta_data'
 
   dependencies {
@@ -260,29 +260,29 @@ project(':core/meta_data') {
     compile libs.quartzJobs
     compile libs.springBootStarter
 
-    compile project(":core/common")
-    compile project(":core/sys_config")
-    compile project(":core/scheduler")
+    compile project(":core_common")
+    compile project(":core_sys_config")
+    compile project(":core_scheduler")
     compile project(":util")
   }
 }
 
-project(':core/monitor') {
+project(':core_monitor') {
   archivesBaseName = 'core_monitor'
 
   dependencies{
     compile libs.springBootStarter
 
-    compile project(':core/task')
-    compile project(':core/scheduler')
-    compile project(':core/analysis')
-    compile project(':core/project')
-    compile project(':core/user')
+    compile project(':core_task')
+    compile project(':core_scheduler')
+    compile project(':core_analysis')
+    compile project(':core_project')
+    compile project(':core_user')
     compile project(':util')
   }
 }
 
-project(':core/project') {
+project(':core_project') {
   archivesBaseName = 'core_project'
 
   dependencies{
@@ -290,11 +290,11 @@ project(':core/project') {
     compile libs.springBootStarterDataJpa
     compile libs.mysqlConnectorJava
 
-    compile project(":core/common")
+    compile project(":core_common")
   }
 }
 
-project(':core/scheduler') {
+project(':core_scheduler') {
   archivesBaseName = 'core_scheduler'
 
   dependencies{
@@ -303,23 +303,23 @@ project(':core/scheduler') {
     compile libs.curatorClient
     compile libs.gson
 
-    compile project(':core/divider')
-    compile project(':core/converter')
-    compile project(':core/task')
-    compile project(':core/sys_config')
+    compile project(':core_divider')
+    compile project(':core_converter')
+    compile project(':core_task')
+    compile project(':core_sys_config')
     compile libs.springRetry
     compile libs.aspectJ
   }
 }
 
-project(':core/task') {
+project(':core_task') {
   archivesBaseName = 'core_task'
 
   dependencies{
     compile libs.springBootStarterDataJpa
     compile libs.mysqlConnectorJava
 
-    compile project(':core/common')
+    compile project(':core_common')
   }
 }
 
@@ -334,7 +334,7 @@ project(':util') {
   }
 }
 
-project(':core/user') {
+project(':core_user') {
   archivesBaseName = 'core_user'
 
   dependencies{
@@ -343,7 +343,7 @@ project(':core/user') {
   }
 }
 
-project(':core/sys_config') {
+project(':core_sys_config') {
   archivesBaseName = 'core_sys_config'
 
   dependencies {
