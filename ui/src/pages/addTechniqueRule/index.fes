@@ -767,7 +767,7 @@
                 //     if(table && table.table_name) {
                 //         this.cacheColumn[`${table.table_name}${id}`] = result.data;
                 //     }
-                // }              
+                // }
             },
             checkFieldsValid(column = [], showErr = true) {
                 /**
@@ -1119,7 +1119,7 @@
         top: -30px;
         right: 8%;
     }
-    .upstream:hover:after { 
+    .upstream:hover:after {
         content: attr(data-title);
         display: block;
         position: absolute;
